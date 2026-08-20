@@ -1,0 +1,35 @@
+{
+  "gmv": {
+    "definition": "已支付订单金额之和，不含退款和取消",
+    "expression": "SUM(orders.pay_amount)",
+    "filters": [
+      "orders.status = 'paid'"
+    ]
+  },
+  "order_count": {
+    "definition": "订单数量",
+    "expression": "COUNT(DISTINCT orders.order_id)",
+    "filters": [
+      "orders.status = 'paid'"
+    ]
+  },
+  "active_user_count": {
+    "definition": "期间内有行为事件的去重用户数",
+    "expression": "COUNT(DISTINCT user_events.user_id)",
+    "filters": []
+  },
+  "aov": {
+    "definition": "平均客单价",
+    "expression": "AVG(orders.pay_amount)",
+    "filters": [
+      "orders.status = 'paid'"
+    ]
+  },
+  "item_quantity": {
+    "definition": "商品件数",
+    "expression": "SUM(orders.quantity)",
+    "filters": [
+      "orders.status = 'paid'"
+    ]
+  }
+}

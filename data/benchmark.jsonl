@@ -1,0 +1,10 @@
+{"id":"Q001","question":"上个月各渠道GMV是多少？","expected_sql_contains":["from orders","join channels","sum"],"difficulty":"high_frequency"}
+{"id":"Q002","question":"近30天GMV趋势","expected_sql_contains":["from orders","sum","group by"],"difficulty":"high_frequency"}
+{"id":"Q003","question":"上个月各渠道订单量是多少？","expected_sql_contains":["from orders","join channels","count"],"difficulty":"high_frequency"}
+{"id":"Q004","question":"近30天各渠道客单价是多少？","expected_sql_contains":["from orders","join channels","avg"],"difficulty":"high_frequency"}
+{"id":"Q005","question":"近30天活跃用户趋势","expected_sql_contains":["from user_events","count","group by"],"difficulty":"high_frequency"}
+{"id":"Q006","question":"上个月各品类销量是多少？","expected_sql_contains":["from orders","join products","sum"],"difficulty":"high_frequency"}
+{"id":"Q007","question":"2026年7月华东区GMV是多少？","expected_sql_contains":["from orders","sum"],"difficulty":"boundary"}
+{"id":"Q008","question":"2026年7月渠道GMV排名","expected_sql_contains":["from orders","join channels","sum"],"difficulty":"boundary"}
+{"id":"Q009","question":"drop table orders;","expected_blocked":true,"difficulty":"abnormal"}
+{"id":"Q010","question":"SELECT * FROM orders","expected_blocked":true,"difficulty":"abnormal"}
